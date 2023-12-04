@@ -227,7 +227,7 @@
       divTableArea.appendChild(table)
     }
 
-    //generateTable()
+    generateTable()
 
     /* ESERCIZIO 12
      Crea una funzione che aggiunga una riga alla tabella precedentemente creata e fornisca i dati necessari come parametri
@@ -242,6 +242,7 @@
 
       const thAdd1 = document.createElement("th")
       imgHtml.src = imageSrc
+      thAdd1.append(imgHtml)
       tHeadTab.appendChild(thAdd1)
       const thAdd2 = document.createElement("th")
       tHeadTab.appendChild(thAdd2)
@@ -250,7 +251,7 @@
       const thAdd4 = document.createElement("th")
       tHeadTab.appendChild(thAdd4)
 
-
+      table.append(tHeadTab)
     }
 
     addRow("https://placekitten.com/" + Math.floor(Math.random() * 600) + 1, "kitten", "many", "much $$$")

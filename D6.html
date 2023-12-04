@@ -138,38 +138,69 @@
       listaLista.appendChild(nuvoLi)
     }
 
-    addToTheSecond()
-    addToTheSecond()
-    addToTheSecond()
     /* ESERCIZIO 6
      Scrivi una funzione che aggiunga un paragrafo al primo div
   */
 
-    const addParagraph = function () { }
+    const addParagraph = function () {
+      const newP = document.createElement("p")
+      newP.innerHTML = "Nuovo paragrafo"
+      const primoDiv = document.getElementsByTagName("div")[0]
+      primoDiv.appendChild(newP)
+    }
+
+    // addParagraph()
 
     /* ESERCIZIO 7
      Scrivi una funzione che faccia scomparire la prima lista non ordinata
+     
   */
+    const hideFirstUl = function () {
+      const listaUl = document.getElementsByTagName("ul")
+      listaUl[0].style.display = "none"
+    }
 
-    const hideFirstUl = function () { }
+    // hideFirstUl()
 
     /* ESERCIZIO 8 
      Scrivi una funzione che renda verde il background di ogni lista non ordinata
     */
 
-    const paintItGreen = function () { }
+    const paintItGreen = function () {
+      const listaUl = document.getElementsByTagName("ul")
+      for (let i = 0; i < listaUl.length; i++) {
+        listaUl[i].style.backgroundColor = "green"
+      }
+    }
 
     /* ESERCIZIO 9
      Scrivi una funzione che rimuova l'ultima lettera dall'h1 ogni volta che l'utente lo clicca
     */
 
-    const makeItClickable = function () { }
+    const makeItClickable = function () {
+      const h1 = document.getElementsByTagName("H1")[0]
+      h1.addEventListener("click", function () {
+        h1.innerHTML = h1.innerHTML.slice(0, h1.innerHTML.length - 1)
+        console.log("h1.innerHTML datatype " + typeof h1.innerHTML);
+
+      });
+    }
+
+    //makeItClickable()
 
     /* ESERCIZIO 10
      Crea una funzione che, al click sul footer, riveli l'URL del link interno come contenuto di un alert()
     */
 
-    const revealFooterLink = function () { }
+    const revealFooterLink = function () {
+      const footerDiv = document.getElementsByTagName("footer")[0]
+
+      footerDiv.addEventListener("click", function () {
+        alert("" + document.querySelectorAll("footer h3 a")[0].getAttribute("href"))
+      });
+    }
+
+    //revealFooterLink()
 
     /* ESERCIZIO 11
      Crea una funzione che crei una tabella nell'elemento con id "tableArea". 

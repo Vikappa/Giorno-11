@@ -38,6 +38,8 @@
   <div>
     <h1>Questo è il titolo della pagina</h1>
     <h2>Questo è il sottotitolo della pagina</h2>
+    <img src="https://placekitten.com/200/300">
+
   </div>
 
   <div>
@@ -207,25 +209,91 @@
      La tabella avrà 5 elementi e questa struttura: immagine, nome prodotto, quantità, prezzo
   */
 
-    const generateTable = function () { }
+    const generateTable = function () {
+      const divTableArea = document.getElementById("tableArea")
+      const table = document.createElement("table")
+      const theadTabella = document.createElement("thead")
+
+      const colonne = ['Immagine', 'Nome Prodotto', 'Quantità', 'Prezzo'];
+
+      for (let i = 0; i < colonne.length; i++) {
+        const th = document.createElement('th');
+        th.innerHTML = colonne[i]
+        theadTabella.appendChild(th)
+      }
+
+      table.appendChild(theadTabella)
+
+      divTableArea.appendChild(table)
+    }
+
+    //generateTable()
 
     /* ESERCIZIO 12
      Crea una funzione che aggiunga una riga alla tabella precedentemente creata e fornisca i dati necessari come parametri
   */
 
-    const addRow = function () { }
+    const addRow = function (imageSrc, nomeProd, Qtà, price) {
+      const table = document.getElementsByTagName("table")[0]
+
+      const imgHtml = document.createElement("img")
+
+      const tHeadTab = document.createElement("thead")
+
+      const thAdd1 = document.createElement("th")
+      imgHtml.src = imageSrc
+      tHeadTab.appendChild(thAdd1)
+      const thAdd2 = document.createElement("th")
+      tHeadTab.appendChild(thAdd2)
+      const thAdd3 = document.createElement("th")
+      tHeadTab.appendChild(thAdd3)
+      const thAdd4 = document.createElement("th")
+      tHeadTab.appendChild(thAdd4)
+
+
+    }
+
+    addRow("https://placekitten.com/" + Math.floor(Math.random() * 600) + 1, "kitten", "many", "much $$$")
+    addRow("https://placekitten.com/" + Math.floor(Math.random() * 600) + 1, "katto", "1", "more $$$")
+    addRow("https://placekitten.com/" + Math.floor(Math.random() * 600) + 1, "cat", "whole", "$$$")
+    addRow("https://placekitten.com/" + Math.floor(Math.random() * 600) + 1, "gat", "11", "€€€€")
 
     /* ESERCIZIO 14
     Crea una funzione che nasconda le immagini della tabella quando eseguita
   */
 
-    const hideAllImages = function () { }
+    const hideAllImages = function () {
+      const imageList = document.querySelectorAll("img")
+      for (let i = 0; i < imageList.length; i++) {
+        imageList[i].style.visibility = "hidden"
+      }
+    }
+    //hideAllImages()
+
 
     /* EXTRA ESERCIZIO 15
     Crea una funzione che cambi il colore del h2 con id "changeMyColor" con un colore random ad ogni click ricevuto
   */
+    function getRandomColor() {
+      const letters = "0123456789ABCDEF";
+      let color = "#";
+      for (let i = 0; i < 6; i++) {
+        color += letters[Math.floor(Math.random() * 16)];
+      }
+      return color;
+    }
 
-    const changeColorWithRandom = function () { }
+    const changeColorWithRandom = function () {
+      const h1 = document.getElementsByTagName("H1")[0]
+      h1.addEventListener("click", function () {
+        const randomColor = getRandomColor();
+        h1.style.color = randomColor;
+
+      });
+    }
+
+    //changeColorWithRandom()
+
   </script>
 </body>
 

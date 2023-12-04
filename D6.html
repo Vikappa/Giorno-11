@@ -244,20 +244,26 @@
       imgHtml.src = imageSrc
       thAdd1.append(imgHtml)
       tHeadTab.appendChild(thAdd1)
+
       const thAdd2 = document.createElement("th")
+      thAdd2.innerHTML = nomeProd
       tHeadTab.appendChild(thAdd2)
+
       const thAdd3 = document.createElement("th")
+      thAdd3.innerHTML = Qtà
       tHeadTab.appendChild(thAdd3)
+
       const thAdd4 = document.createElement("th")
+      thAdd4.innerHTML = price
       tHeadTab.appendChild(thAdd4)
 
       table.append(tHeadTab)
     }
 
-    addRow("https://placekitten.com/" + Math.floor(Math.random() * 600) + 1, "kitten", "many", "much $$$")
-    addRow("https://placekitten.com/" + Math.floor(Math.random() * 600) + 1, "katto", "1", "more $$$")
-    addRow("https://placekitten.com/" + Math.floor(Math.random() * 600) + 1, "cat", "whole", "$$$")
-    addRow("https://placekitten.com/" + Math.floor(Math.random() * 600) + 1, "gat", "11", "€€€€")
+    addRow("https://placekitten.com/" + Math.floor(Math.random() * 50) + 1, "kitten", "many", "much $$$")
+    addRow("https://placekitten.com/" + Math.floor(Math.random() * 50) + 1, "katto", "1", "more $$$")
+    addRow("https://placekitten.com/" + Math.floor(Math.random() * 50) + 1, "cat", "whole", "$$$")
+    addRow("https://placekitten.com/" + Math.floor(Math.random() * 50) + 1, "gat", "11", "€€€€")
 
     /* ESERCIZIO 14
     Crea una funzione che nasconda le immagini della tabella quando eseguita
